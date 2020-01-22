@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
-import './App.css';
-import FileList from './components/fileList'
-import PermissionList from './components/permissionList'
+import Loading from './components/common/loading'
+// import FileList from './components/fileList'
+// import PermissionList from './components/permissionList'
+import PermissionListTable from './components/PermissionListTable'
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
+      done: undefined
+   };
   }
+
+  
     render() {
       return (
-        <div className="App">
-          <FileList />
-          <PermissionList />
+        <div className="container">
+          
+            {/* {!this.state.done ? (
+            <header className="App-header">
+              <Loading />
+            </header>) 
+            : 
+            (<PermissionListTable />)} */}
+            <header className="App-header">
+              <Loading />
+            </header>
+            <PermissionListTable />
+          
         </div>
       );
     }
